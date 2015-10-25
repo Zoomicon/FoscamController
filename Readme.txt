@@ -12,6 +12,15 @@ This project is a WPF C# program for displaying MJPEG video stream and controlli
 Change History
 --------------
 
+* 20151026
+[George Birbilis / Zoomicon.com]
+- Added IPanTiltController, IVideoController and IFoscamController (this extends the former two ones) interfaces
+- FoscamController class now implements IFoscamController interface
+- using Camera, Camera.Foscam and Camera.MJPEG namespaces
+- reorganized code in folders based on the respective namespaces
+- cleaned up the XAML
+- added error handling and respective message dialog suggesting to set Camera URL, Username and Password in the code (that is in MainWindow.xaml.cs)
+
 * 20151025
 [George Birbilis / Zoomicon.com]
 - Centering window on screen
