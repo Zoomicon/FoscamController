@@ -17,6 +17,7 @@ Change History
 - Centering window on screen
 - Cleaned up and refactored XAML and code
 - Renamed to FoscamController (since control code is specific to Foscam PTZ IP cameras)
+- Using namescape Camera.Foscam
 - Uploaded to CodePlex
 
 * 20130604
