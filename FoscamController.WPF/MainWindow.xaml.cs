@@ -1,5 +1,5 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
-//Filename: MainWindow.cs
+//Filename: MainWindow.xaml.cs
 //Version: 20151025
 
 using System.Windows;
