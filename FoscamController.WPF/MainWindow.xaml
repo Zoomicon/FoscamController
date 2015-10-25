@@ -1,20 +1,68 @@
-﻿<Window x:Class="Camera.Foscam.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" x:Name="imgStream"></Image>
-        <DockPanel Grid.Row="1" LastChildFill="False">
-            <Button Click="btnUp_Click_1" DockPanel.Dock="Top" x:Name="btnUp" HorizontalAlignment="Center">Up</Button>
-            <Button Click="btnDown_Click_1" DockPanel.Dock="Bottom" x:Name="btnDown" HorizontalAlignment="Center">Down</Button>
-            <Button Click="btnRight_Click_1" DockPanel.Dock="Right" x:Name="btnRight" HorizontalAlignment="Center" Height="20" VerticalAlignment="Bottom">Right</Button>
-            <Button Click="btnLeft_Click_1" DockPanel.Dock="Left" x:Name="btnLeft" HorizontalAlignment="Center" Height="20" VerticalAlignment="Top">Left</Button>
+﻿<!--
+Project: FoscamController (http://FoscamController.codeplex.com)
+Filename: MainWindow.xaml
+Version: 20151026
+-->
 
-        </DockPanel>
+<Window
+  x:Class="Camera.Foscam.MainWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Height="350" Width="525"
+  WindowStartupLocation="CenterScreen"
+  Title="MainWindow"
+  >
 
-    </Grid>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <Image
+      x:Name="imgStream"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch"
+      />
+
+    <DockPanel
+      Grid.Row="1"
+      LastChildFill="False"
+      >
+      <Button
+        x:Name="btnUp"
+        DockPanel.Dock="Top"
+        HorizontalAlignment="Center"
+        Content="Up"
+        Click="btnUp_Click"
+        />
+      <Button
+        x:Name="btnDown"
+        DockPanel.Dock="Bottom"
+        HorizontalAlignment="Center"
+        Content="Down"
+        Click="btnDown_Click"
+        />
+      <Button
+        x:Name="btnRight"
+        DockPanel.Dock="Right"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Bottom"
+        Height="20"
+        Content="Right"
+        Click="btnRight_Click"
+        />
+      <Button
+        x:Name="btnLeft"
+        DockPanel.Dock="Left"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Top"
+        Height="20"
+        Content="Left"
+        Click="btnLeft_Click"
+        />
+    </DockPanel>
+
+  </Grid>
+
 </Window>

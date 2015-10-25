@@ -1,10 +1,10 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: PartReadyEventArgs.cs
-//Version: 20151025
+//Version: 20151026
 
 using System;
 
-namespace Camera.Foscam
+namespace Camera.MJPEG
 {
   public class PartReadyEventArgs : EventArgs
   {

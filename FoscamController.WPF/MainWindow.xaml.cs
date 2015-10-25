@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: MainWindow.xaml.cs
-//Version: 20151025
+//Version: 20151026
 
 using System.Windows;
 
@@ -21,7 +21,7 @@ namespace Camera.Foscam
 
     #region --- Fields ---
 
-    private FoscamController _controller;
+    private IFoscamController _controller;
 
     #endregion
 
@@ -38,7 +38,7 @@ namespace Camera.Foscam
     {
       _controller = new FoscamController(CAMERA_URL, USERNAME, PASSWORD);
       _controller.ImageReady += dec_FrameReady;
-      _controller.StartProcessing();
+      _controller.StartVideo();
     }
 
     #endregion
@@ -47,7 +47,7 @@ namespace Camera.Foscam
 
     private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
     {
-      _controller.StopProcessing();
+      _controller.StopVideo();
     }
 
     #endregion
@@ -59,24 +59,24 @@ namespace Camera.Foscam
       imgStream.Source = args.Image;
     }
 
-    private void btnRight_Click_1(object sender, RoutedEventArgs e)
+    private void btnRight_Click(object sender, RoutedEventArgs e)
     {
       _controller.PanRight();
     }
 
-    private void btnLeft_Click_1(object sender, RoutedEventArgs e)
+    private void btnLeft_Click(object sender, RoutedEventArgs e)
     {
       _controller.PanLeft();
     }
 
-    private void btnDown_Click_1(object sender, RoutedEventArgs e)
+    private void btnDown_Click(object sender, RoutedEventArgs e)
     {
-      _controller.PanDown();
+      _controller.TiltDown();
     }
 
-    private void btnUp_Click_1(object sender, RoutedEventArgs e)
+    private void btnUp_Click(object sender, RoutedEventArgs e)
     {
-      _controller.PanUp();
+      _controller.TiltUp();
     }
 
     #endregion

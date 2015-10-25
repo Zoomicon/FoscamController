@@ -1,13 +1,13 @@
-﻿ //Project: FoscamController (http://FoscamController.codeplex.com)
+﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: MultiPartStream.cs
-//Version: 20151025
+//Version: 20151026
 
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Camera.Foscam
+namespace Camera.MJPEG
 {
   public class MultiPartStream
   {
