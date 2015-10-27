@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
-//Filename: FoscamController.cs
-//Version: 20151025
+//Filename: FoscamMJPEG.cs
+//Version: 20151027
 
 using Camera.MJPEG;
 using System;
@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 
 namespace Camera.Foscam
 {
-  public class FoscamController : IFoscamController
+  public class FoscamMJPEG : IVideoController
   {
 
     #region --- Constants ---
@@ -23,14 +23,12 @@ namespace Camera.Foscam
 
     //Foscam specific:
     private const string _videoRelativeUri = "/videostream.cgi?resolution=32&rate=0";
-    private const string _panningRelativeUri = "/decoder_control.cgi?command={0}";
 
     #endregion
 
     #region --- Fields ---
 
     private string _url;
-    private bool _panning;
     private HttpClient _client;
     private AutomaticMultiPartReader _reader;
     private BitmapImage _currentFrame;
@@ -39,11 +37,11 @@ namespace Camera.Foscam
 
     #region --- Initialization ---
 
-    public FoscamController(string url, string username, string password)
+    public FoscamMJPEG(string url, string username, string password)
     {
-      _url = url;
       WebRequestHandler handler = new WebRequestHandler();
       handler.Credentials = new NetworkCredential(username, password);
+      _url = url;
       _client = new HttpClient(handler);
       _client.BaseAddress = new Uri(_url);
       _client.Timeout = TimeSpan.FromMilliseconds(-1);
@@ -53,50 +51,10 @@ namespace Camera.Foscam
 
     #region --- Methods ---
 
-    private async void SendPanCommand(int commandNumber)
-    {
-      try {
-        HttpResponseMessage result;
-        result = await _client.GetAsync(string.Format(_panningRelativeUri, commandNumber));
-        result.EnsureSuccessStatusCode();
-      }
-      catch(Exception e) //TODO: if caller can catch the exception (if no issue with async), maybe let it pass through and show message at caller
-      {
-        MessageBox.Show(e.Message + "\n\n" + ERROR_CONNECTION, ERROR_TITLE);
-      }
-    }
-
-    public void TiltUp()
-    {
-      int command = _panning ? 1 : 0;
-      SendPanCommand(command);
-      _panning = !_panning;
-    }
-
-    public void TiltDown()
-    {
-      int command = _panning ? 3 : 2;
-      SendPanCommand(command);
-      _panning = !_panning;
-    }
-
-    public void PanRight()
-    {
-      int command = _panning ? 5 : 4;
-      SendPanCommand(command);
-      _panning = !_panning;
-    }
-
-    public void PanLeft()
-    {
-      int command = _panning ? 7 : 6;
-      SendPanCommand(command);
-      _panning = !_panning;
-    }
-
     public async void StartVideo()
     {
-      try {
+      try
+      {
         HttpResponseMessage resultMessage = await _client.GetAsync(_videoRelativeUri, HttpCompletionOption.ResponseHeadersRead);
         //because of the configure await the rest of this method happens on a background thread.
         resultMessage.EnsureSuccessStatusCode();
@@ -110,7 +68,7 @@ namespace Camera.Foscam
           _reader.StartProcessing();
         }
       }
-      catch(Exception e) //TODO: if caller can catch the exception (if no issue with async), maybe let it pass through and show message at caller
+      catch (Exception e) //TODO: if caller can catch the exception (if no issue with async), maybe let it pass through and show message at caller
       {
         MessageBox.Show(e.Message + "\n\n" + ERROR_CONNECTION, ERROR_TITLE);
       }
@@ -151,4 +109,5 @@ namespace Camera.Foscam
     #endregion
 
   }
+
 }

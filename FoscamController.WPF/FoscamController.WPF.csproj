@@ -61,11 +61,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Camera\Foscam\IFoscamController.cs" />
+    <Compile Include="Camera\Foscam\FoscamMJPEG.cs" />
     <Compile Include="Camera\MJPEG\AutomaticMultiPartReader.cs" />
     <Compile Include="Camera\IVideoController.cs" />
     <Compile Include="Camera\ImageReadyEventArgs.cs" />
-    <Compile Include="Camera\Foscam\FoscamController.cs" />
+    <Compile Include="Camera\Foscam\FoscamPanTilt.cs" />
     <Compile Include="Camera\IPanTiltController.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
