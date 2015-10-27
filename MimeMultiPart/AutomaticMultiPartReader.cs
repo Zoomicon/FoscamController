@@ -1,10 +1,10 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: AutomaticMultiPartReader.cs
-//Version: 20151026
+//Version: 20151027
 
 using System;
 
-namespace Camera.MJPEG
+namespace Mime.MultiPart
 {
   public class AutomaticMultiPartReader
   {

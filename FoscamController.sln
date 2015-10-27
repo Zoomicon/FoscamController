@@ -5,6 +5,17 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoscamController.WPF", "FoscamController.WPF\FoscamController.WPF.csproj", "{71069F1D-AD17-42EF-B2DE-1B860DD657BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraControllers", "CameraControllers\CameraControllers.csproj", "{05775379-9981-47E2-A616-108F7DEB111A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoscamMJPEGCameraController", "FoscamMJPEGCameraController\FoscamMJPEGCameraController.csproj", "{887028ED-0314-4A31-B096-71F7C1BD9D59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{320A4AA3-D8B6-4CC2-8630-5A9A2E85EBB4}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MimeMultiPart", "MimeMultiPart\MimeMultiPart.csproj", "{EE1CBBC0-C15B-475E-8239-98A96F41E4AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +26,18 @@ Global
 		{71069F1D-AD17-42EF-B2DE-1B860DD657BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71069F1D-AD17-42EF-B2DE-1B860DD657BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71069F1D-AD17-42EF-B2DE-1B860DD657BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05775379-9981-47E2-A616-108F7DEB111A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05775379-9981-47E2-A616-108F7DEB111A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05775379-9981-47E2-A616-108F7DEB111A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05775379-9981-47E2-A616-108F7DEB111A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{887028ED-0314-4A31-B096-71F7C1BD9D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{887028ED-0314-4A31-B096-71F7C1BD9D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{887028ED-0314-4A31-B096-71F7C1BD9D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{887028ED-0314-4A31-B096-71F7C1BD9D59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE1CBBC0-C15B-475E-8239-98A96F41E4AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE1CBBC0-C15B-475E-8239-98A96F41E4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE1CBBC0-C15B-475E-8239-98A96F41E4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE1CBBC0-C15B-475E-8239-98A96F41E4AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

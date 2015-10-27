@@ -2,13 +2,14 @@
 //Filename: FoscamMJPEG.cs
 //Version: 20151027
 
-using Camera.MJPEG;
+using Mime.MultiPart;
 using System;
 using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace Camera.Foscam
 {
@@ -96,7 +97,7 @@ namespace Camera.Foscam
     {
       //let's get this events back on the UI thread
       Stream frameStream = new MemoryStream(e.Part);
-      App.Current.Dispatcher.Invoke(new Action(() =>
+      Dispatcher.CurrentDispatcher.Invoke(new Action(() =>
       {
         _currentFrame = new BitmapImage();
         _currentFrame.BeginInit();
