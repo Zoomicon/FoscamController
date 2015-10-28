@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MimeMultiPart", "MimeMultiPart\MimeMultiPart.csproj", "{EE1CBBC0-C15B-475E-8239-98A96F41E4AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoscamHDCameraController", "FoscamHDCameraController\FoscamHDCameraController.csproj", "{49D323B2-7A67-4558-A791-071F0190247E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{EE1CBBC0-C15B-475E-8239-98A96F41E4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE1CBBC0-C15B-475E-8239-98A96F41E4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE1CBBC0-C15B-475E-8239-98A96F41E4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49D323B2-7A67-4558-A791-071F0190247E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D323B2-7A67-4558-A791-071F0190247E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D323B2-7A67-4558-A791-071F0190247E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D323B2-7A67-4558-A791-071F0190247E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,7 +7,7 @@
     <ProjectGuid>{887028ED-0314-4A31-B096-71F7C1BD9D59}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Camera.Foscam</RootNamespace>
+    <RootNamespace>Camera.Foscam.MJPEG</RootNamespace>
     <AssemblyName>FoscamMJPEGCameraController</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -38,8 +38,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FoscamMJPEG.cs" />
-    <Compile Include="FoscamPanTilt.cs" />
+    <Compile Include="FoscamMJPEGVideo.cs" />
+    <Compile Include="FoscamMJPEGMotion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
-//Filename: FoscamMJPEG.cs
-//Version: 20151027
+//Filename: FoscamMJPEGVideo.cs
+//Version: 20151028
 
 using Mime.MultiPart;
 using System;
@@ -11,9 +11,9 @@ using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
-namespace Camera.Foscam
+namespace Camera.Foscam.MJPEG
 {
-  public class FoscamMJPEG : IVideoController
+  public class FoscamMJPEGVideo : IVideoController
   {
 
     #region --- Constants ---
@@ -22,7 +22,6 @@ namespace Camera.Foscam
     private const string ERROR_CONNECTION = "Have you set the correct values for Camera URL and Username/Password in the code?";
     private const string ERROR_NO_MJPEG = "The camera did not return a MJPEG stream";
 
-    //Foscam specific:
     private const string _videoRelativeUri = "/videostream.cgi?resolution=32&rate=0";
 
     #endregion
@@ -38,7 +37,7 @@ namespace Camera.Foscam
 
     #region --- Initialization ---
 
-    public FoscamMJPEG(string url, string username, string password)
+    public FoscamMJPEGVideo(string url, string username, string password)
     {
       WebRequestHandler handler = new WebRequestHandler();
       handler.Credentials = new NetworkCredential(username, password);

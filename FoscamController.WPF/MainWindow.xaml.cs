@@ -1,7 +1,9 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: MainWindow.xaml.cs
-//Version: 20151027
+//Version: 20151028
 
+using Camera.Foscam.MJPEG;
+using Camera.Foscam.HD;
 using System.Windows;
 
 namespace Camera.Foscam
@@ -13,15 +15,15 @@ namespace Camera.Foscam
   {
     #region --- Constants ---
 
-    private const string CAMERA_URL = "http://yoururl";
-    private const string USERNAME = "yourusername";
-    private const string PASSWORD = "yourpassword";
+    private const string CAMERA_URL = "http://cameraURL:cameraPort";
+    private const string USERNAME = "username";
+    private const string PASSWORD = "password";
 
     #endregion
 
     #region --- Fields ---
 
-    private IPanTiltController _pantilt;
+    private IMotionController _motion;
     private IVideoController _video;
 
     #endregion
@@ -37,9 +39,11 @@ namespace Camera.Foscam
 
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-      _pantilt = new FoscamPanTilt(CAMERA_URL, USERNAME, PASSWORD);
+      _motion =
+        new FoscamMJPEGMotion(CAMERA_URL, USERNAME, PASSWORD);
+        //new FoscamHDMotion(CAMERA_URL, USERNAME, PASSWORD);
 
-      _video = new FoscamMJPEG(CAMERA_URL, USERNAME, PASSWORD);
+      _video = new FoscamMJPEGVideo(CAMERA_URL, USERNAME, PASSWORD);
       _video.ImageReady += dec_FrameReady;
       _video.StartVideo();
     }
@@ -64,22 +68,22 @@ namespace Camera.Foscam
 
     private void btnRight_Click(object sender, RoutedEventArgs e)
     {
-      _pantilt.PanRight();
+      _motion.MotionRight();
     }
 
     private void btnLeft_Click(object sender, RoutedEventArgs e)
     {
-      _pantilt.PanLeft();
+      _motion.MotionLeft();
     }
 
     private void btnDown_Click(object sender, RoutedEventArgs e)
     {
-      _pantilt.TiltDown();
+      _motion.MotionDown();
     }
 
     private void btnUp_Click(object sender, RoutedEventArgs e)
     {
-      _pantilt.TiltUp();
+      _motion.MotionUp();
     }
 
     #endregion

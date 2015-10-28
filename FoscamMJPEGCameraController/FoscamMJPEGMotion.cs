@@ -1,15 +1,15 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
-//Filename: FoscamPanTilt.cs
-//Version: 20151027
+//Filename: FoscamMJPEGMotion.cs
+//Version: 20151028
 
 using System;
 using System.Net;
 using System.Net.Http;
 using System.Windows;
 
-namespace Camera.Foscam
+namespace Camera.Foscam.MJPEG
 {
-  public class FoscamPanTilt : IPanTiltController
+  public class FoscamMJPEGMotion : IMotionController
   {
 
     #region --- Constants ---
@@ -17,7 +17,6 @@ namespace Camera.Foscam
     private const string ERROR_TITLE = "Error";
     private const string ERROR_CONNECTION = "Have you set the correct values for Camera URL and Username/Password in the code?";
 
-    //Foscam specific:
     private const string _panningRelativeUri = "/decoder_control.cgi?command={0}";
 
     #endregion
@@ -32,7 +31,7 @@ namespace Camera.Foscam
 
     #region --- Initialization ---
 
-    public FoscamPanTilt(string url, string username, string password)
+    public FoscamMJPEGMotion(string url, string username, string password)
     {
       WebRequestHandler handler = new WebRequestHandler();
       handler.Credentials = new NetworkCredential(username, password);
@@ -59,32 +58,67 @@ namespace Camera.Foscam
       }
     }
 
-    public void TiltUp()
+    public void MotionStop()
+    {
+      throw new NotImplementedException(); //TODO
+    }
+
+    public void MotionUp()
     {
       int command = _panning ? 1 : 0;
       SendPanCommand(command);
       _panning = !_panning;
     }
 
-    public void TiltDown()
+    public void MotionDown()
     {
       int command = _panning ? 3 : 2;
       SendPanCommand(command);
       _panning = !_panning;
     }
 
-    public void PanRight()
+    public void MotionLeft()
+    {
+      int command = _panning ? 7 : 6;
+      SendPanCommand(command);
+      _panning = !_panning;
+    }
+
+    public void MotionRight()
     {
       int command = _panning ? 5 : 4;
       SendPanCommand(command);
       _panning = !_panning;
     }
 
-    public void PanLeft()
+    public void MotionUpLeft()
     {
-      int command = _panning ? 7 : 6;
-      SendPanCommand(command);
-      _panning = !_panning;
+      throw new NotImplementedException(); //TODO
+    }
+
+    public void MotionUpRight()
+    {
+      throw new NotImplementedException(); //TODO
+    }
+
+    public void MotionDownLeft()
+    {
+      throw new NotImplementedException(); //TODO
+    }
+
+    public void MotionDownRight()
+    {
+      throw new NotImplementedException(); //TODO
+    }
+
+    public void MotionGotoCenter()
+    {
+      throw new NotImplementedException(); //TODO
+    }
+
+    public void MotionGotoPreset(string name)
+    {
+      throw new NotImplementedException(); //TODO
     }
 
     #endregion
