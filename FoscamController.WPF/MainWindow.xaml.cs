@@ -2,8 +2,14 @@
 //Filename: MainWindow.xaml.cs
 //Version: 20151028
 
-using Camera.Foscam.MJPEG;
+//#define USE_FOSCAM_HD_CAMERA //uncomment this to use a Foscam HD Camera model instead of an MJPEG model (note that the video won't work in that case, just the motion control for now)
+
+#if USE_FOSCAM_HD_CAMERA
 using Camera.Foscam.HD;
+#else
+using Camera.Foscam.MJPEG;
+#endif
+
 using System.Windows;
 
 namespace Camera.Foscam
@@ -15,7 +21,7 @@ namespace Camera.Foscam
   {
     #region --- Constants ---
 
-    private const string CAMERA_URL = "http://cameraURL:cameraPort";
+    private const string CAMERA_URL = "http://cameraAddressAndPort";
     private const string USERNAME = "username";
     private const string PASSWORD = "password";
 
@@ -39,13 +45,19 @@ namespace Camera.Foscam
 
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-      _motion =
-        new FoscamMJPEGMotion(CAMERA_URL, USERNAME, PASSWORD);
-        //new FoscamHDMotion(CAMERA_URL, USERNAME, PASSWORD);
-
+      #if USE_FOSCAM_HD_CAMERA
+      _video = null;
+      _motion = new FoscamHDMotion(CAMERA_URL, USERNAME, PASSWORD);
+      #else
       _video = new FoscamMJPEGVideo(CAMERA_URL, USERNAME, PASSWORD);
-      _video.ImageReady += dec_FrameReady;
-      _video.StartVideo();
+      _motion = new FoscamMJPEGMotion(CAMERA_URL, USERNAME, PASSWORD);
+      #endif
+
+      if (_video != null)
+      {
+        _video.ImageReady += dec_FrameReady;
+        _video.StartVideo();
+      }
     }
 
     #endregion
@@ -54,7 +66,11 @@ namespace Camera.Foscam
 
     private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
     {
-      _video.StopVideo();
+      if (_video != null)
+      {
+        _video.StopVideo();
+        _video = null;
+      }
     }
 
     #endregion
@@ -68,22 +84,26 @@ namespace Camera.Foscam
 
     private void btnRight_Click(object sender, RoutedEventArgs e)
     {
-      _motion.MotionRight();
+      if (_motion != null)
+        _motion.MotionRight();
     }
 
     private void btnLeft_Click(object sender, RoutedEventArgs e)
     {
-      _motion.MotionLeft();
+      if (_motion != null)
+        _motion.MotionLeft();
     }
 
     private void btnDown_Click(object sender, RoutedEventArgs e)
     {
-      _motion.MotionDown();
+      if (_motion != null)
+        _motion.MotionDown();
     }
 
     private void btnUp_Click(object sender, RoutedEventArgs e)
     {
-      _motion.MotionUp();
+      if (_motion != null)
+        _motion.MotionUp();
     }
 
     #endregion
