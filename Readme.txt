@@ -6,9 +6,9 @@ http://FoscamController.codeplex.com
 Description
 -----------
 
-This project is a WPF C# program for displaying MJPEG video stream and controlling a Foscam PTZ IP Camera
+This is a Library and Demo WPF program for controlling MJPEG and HD models of Foscam IP PTZ (Pan-Tilt-Zoom) Cameras and displaying MJPEG and H.264/RTSP video
 
-based on information and code from this article:
+MJPEG part is based on information and code from this article:
 http://blogs.infosupport.com/writing-an-ip-camera-viewer-in-c-5-0
 
 
@@ -24,12 +24,9 @@ or can develop your own code using Web Services (WSDL/SOAP) using the WSDL defin
 at  http://http://www.onvif.org/Documents/Specifications.aspx (note that not all cameras support the latest ONVIF spec)
 
 
-* Video: only MJPEG models currently
+* Video: both MJPEG and HD Foscam (using RTSP+H.264) camera models
 
-for RTSP video can use FFMPEG (like ODM does),
-also see another sample using FFMPEG at http://www.codeproject.com/Articles/885869/Stream-Player-control
-or use VLC ActiveX control (see  http://miteshsureja.blogspot.gr/2011/11/creating-simple-video-player-using-vlc.html)
-or use WPF MediaKit (which uses DirectShow layer - https://github.com/Sascha-L/WPF-MediaKit/wiki)
+Uses xZune.Vlc - https://github.com/higankanshi/xZune.Vlc (via NuGet package - see note below on copying the native VLC libraries from that repository for your executable to find)
 
 
 Usage
@@ -49,6 +46,13 @@ change to IP or DNS name and port (say http://someIPaddress:somePort) for the ca
     private const string USERNAME = "username";
     private const string PASSWORD = "password";
 change to camera username and password respectively
+
+* Note:
+When using FOSCAMHDCAMERA, the VLC libraries have to be placed in a "LibVlc" subfolder, located in the
+same folder as the application executable (the bin\Debug folder when using Visual Studio).
+Can override that path using an optional parameter passed to FoscamHDVideo class constructor (there is also an
+extra optional parameter at that class for VLC options)
+That subfolder can be copied from the repository available at http://github.com/birbilis/xZune.Vlc
 
 
 Change History
