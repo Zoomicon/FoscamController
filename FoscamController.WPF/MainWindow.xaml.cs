@@ -1,8 +1,15 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: MainWindow.xaml.cs
-//Version: 20151028
+//Version: 20151111
 
-//#define USE_FOSCAM_HD_CAMERA //uncomment this to use a Foscam HD Camera model instead of an MJPEG model (note that the video won't work in that case, just the motion control for now)
+//Note: When using FOSCAM_HD_CAMERA, the VLC libraries have to be placed in a "LibVlc" subfolder, located in the
+// same folder as the application executable (the bin\Debug folder when using Visual Studio).
+// Can override that path using an optional parameter passed to FoscamHDVideo class constructor (there is also an
+// extra optional parameter at that class for VLC options)
+// That subfolder can be copied from the repository available at http://github.com/birbilis/xZune.Vlc
+
+
+#define USE_FOSCAM_HD_CAMERA //uncomment this to use a Foscam HD Camera model instead of an MJPEG model
 
 #if USE_FOSCAM_HD_CAMERA
 using Camera.Foscam.HD;
@@ -11,6 +18,7 @@ using Camera.Foscam.MJPEG;
 #endif
 
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Camera.Foscam
 {
@@ -21,9 +29,9 @@ namespace Camera.Foscam
   {
     #region --- Constants ---
 
-    private const string CAMERA_URL = "http://cameraAddressAndPort";
-    private const string USERNAME = "username";
-    private const string PASSWORD = "password";
+    private const string CAMERA_URL = "http://someIPorDomainName:somePort"; //Foscam HD video controller knows how to replace the HTTP:// with RTSP:// to get to the RTSP video stream, so use the base URL of the camera here (the one it's administration page uses), plus don't use a "/" char at the end
+    private const string USERNAME = "user";
+    private const string PASSWORD = "pwd";
 
     #endregion
 
@@ -46,7 +54,7 @@ namespace Camera.Foscam
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
       #if USE_FOSCAM_HD_CAMERA
-      _video = null;
+      _video = new FoscamHDVideo(CAMERA_URL, USERNAME, PASSWORD);
       _motion = new FoscamHDMotion(CAMERA_URL, USERNAME, PASSWORD);
       #else
       _video = new FoscamMJPEGVideo(CAMERA_URL, USERNAME, PASSWORD);
@@ -55,7 +63,10 @@ namespace Camera.Foscam
 
       if (_video != null)
       {
-        _video.ImageReady += dec_FrameReady;
+        UIElement player = _video.VideoPlayer;
+        player.SetValue(Grid.RowProperty, 0);
+        //player.SetValue(Canvas.ZIndexProperty, -1);
+        LayoutRoot.Children.Add(player);
         _video.StartVideo();
       }
     }
@@ -77,21 +88,16 @@ namespace Camera.Foscam
 
     #region --- Events ---
 
-    private void dec_FrameReady(object sender, ImageReadyEventArgs args)
-    {
-      imgStream.Source = args.Image;
-    }
-
-    private void btnRight_Click(object sender, RoutedEventArgs e)
+    private void btnCenter_Click(object sender, RoutedEventArgs e)
     {
       if (_motion != null)
-        _motion.MotionRight();
+        _motion.MotionGotoCenter();
     }
 
-    private void btnLeft_Click(object sender, RoutedEventArgs e)
+    private void btnUp_Click(object sender, RoutedEventArgs e)
     {
       if (_motion != null)
-        _motion.MotionLeft();
+        _motion.MotionUp();
     }
 
     private void btnDown_Click(object sender, RoutedEventArgs e)
@@ -100,10 +106,16 @@ namespace Camera.Foscam
         _motion.MotionDown();
     }
 
-    private void btnUp_Click(object sender, RoutedEventArgs e)
+    private void btnLeft_Click(object sender, RoutedEventArgs e)
     {
       if (_motion != null)
-        _motion.MotionUp();
+        _motion.MotionLeft();
+    }
+
+    private void btnRight_Click(object sender, RoutedEventArgs e)
+    {
+      if (_motion != null)
+        _motion.MotionRight();
     }
 
     #endregion

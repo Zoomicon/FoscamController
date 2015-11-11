@@ -1,8 +1,7 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: FoscamMJPEGVideo.cs
-//Version: 20151028
+//Version: 20151111
 
-using Mime.MultiPart;
 using System;
 using System.IO;
 using System.Net;
@@ -11,9 +10,12 @@ using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
+using Mime.MultiPart;
+using Images;
+
 namespace Camera.Foscam.MJPEG
 {
-  public class FoscamMJPEGVideo : IVideoController
+  public class FoscamMJPEGVideo : IVideoController, IImageReadyEventProvider
   {
 
     #region --- Constants ---
@@ -22,7 +24,7 @@ namespace Camera.Foscam.MJPEG
     private const string ERROR_CONNECTION = "Have you set the correct values for Camera URL and Username/Password in the code?";
     private const string ERROR_NO_MJPEG = "The camera did not return a MJPEG stream";
 
-    private const string _videoRelativeUri = "/videostream.cgi?resolution=32&rate=0";
+    private const string VIDEO_RELATIVE_URL = "/videostream.cgi?resolution=32&rate=0";
 
     #endregion
 
@@ -32,6 +34,7 @@ namespace Camera.Foscam.MJPEG
     private HttpClient _client;
     private AutomaticMultiPartReader _reader;
     private BitmapImage _currentFrame;
+    private UpdatingImage player;
 
     #endregion
 
@@ -49,13 +52,30 @@ namespace Camera.Foscam.MJPEG
 
     #endregion
 
+    #region --- Properties ---
+
+    public UIElement VideoPlayer
+    {
+      get
+      {
+        if (player == null)
+        {
+          player = new UpdatingImage();
+          ImageReady += player.OnImageReady;
+        }
+        return player;
+      }
+    }
+
+    #endregion
+
     #region --- Methods ---
 
     public async void StartVideo()
     {
       try
       {
-        HttpResponseMessage resultMessage = await _client.GetAsync(_videoRelativeUri, HttpCompletionOption.ResponseHeadersRead);
+        HttpResponseMessage resultMessage = await _client.GetAsync(VIDEO_RELATIVE_URL, HttpCompletionOption.ResponseHeadersRead);
         //because of the configure await the rest of this method happens on a background thread.
         resultMessage.EnsureSuccessStatusCode();
         // check the response type
@@ -84,7 +104,7 @@ namespace Camera.Foscam.MJPEG
 
     #region --- Events ---
 
-    public event EventHandler<ImageReadyEventArgs> ImageReady;
+    public event EventHandler<ImageReadyEventArgs> ImageReady; //implementing IImageReadyEventProvider interface
 
     protected void OnImageReady()
     {

@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: FoscamHDMotion.cs
-//Version: 20151028
+//Version: 20151111
 
 using System;
 using System.Net;
@@ -84,51 +84,61 @@ namespace Camera.Foscam.HD
 
     public void MotionUp()
     {
+      MotionStop();
       SendCommand(COMMAND_MOTION_UP);
     }
 
     public void MotionDown()
     {
+      MotionStop();
       SendCommand(COMMAND_MOTION_DOWN);
     }
 
     public void MotionLeft()
     {
+      MotionStop();
       SendCommand(COMMAND_MOTION_LEFT);
     }
 
     public void MotionRight()
     {
+      MotionStop();
       SendCommand(COMMAND_MOTION_RIGHT);
     }
 
     public void MotionUpLeft()
     {
+      MotionStop();
       SendCommand(COMMAND_MOTION_UP_LEFT);
     }
 
     public void MotionUpRight()
     {
+      MotionStop();
       SendCommand(COMMAND_MOTION_UP_RIGHT);
     }
 
     public void MotionDownLeft()
     {
+      MotionStop();
       SendCommand(COMMAND_MOTION_DOWN_LEFT);
     }
 
     public void MotionDownRight()
     {
+      MotionStop();
       SendCommand(COMMAND_MOTION_DOWN_RIGHT);
     }
 
     public void MotionGotoCenter()
     {
+      MotionStop();
       SendCommand(COMMAND_MOTION_GOTO_CENTER);
     }
 
     public void MotionGotoPreset(string name)
     {
+      MotionStop();
       SendCommand(COMMAND_MOTION_GOTO_PRESET + "&name=" + name);
     }
 

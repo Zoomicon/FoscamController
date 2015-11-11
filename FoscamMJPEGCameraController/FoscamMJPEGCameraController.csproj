@@ -51,6 +51,10 @@
       <Project>{ee1cbbc0-c15b-475e-8239-98a96f41e4ab}</Project>
       <Name>MimeMultiPart</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UpdatingImage\UpdatingImage.csproj">
+      <Project>{b5de0a77-50d0-4c97-a6e2-b3186c0ba0d0}</Project>
+      <Name>UpdatingImage</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

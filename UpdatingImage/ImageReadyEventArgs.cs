@@ -1,11 +1,11 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: ImageReadyEventArgs.cs
-//Version: 20151026
+//Version: 20151111
 
 using System;
 using System.Windows.Media.Imaging;
 
-namespace Camera
+namespace Images
 {
   public class ImageReadyEventArgs : EventArgs
   {

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{49D323B2-7A67-4558-A791-071F0190247E}</ProjectGuid>
+    <ProjectGuid>{B5DE0A77-50D0-4C97-A6E2-B3186C0BA0D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Camera.Foscam.HD</RootNamespace>
-    <AssemblyName>FoscamHDCameraController</AssemblyName>
+    <RootNamespace>Images</RootNamespace>
+    <AssemblyName>UpdatingImage</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,31 +33,14 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="WindowsBase" />
-    <Reference Include="xZune.Vlc, Version=15.10.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\xZune.Vlc.15.10.25\lib\net45\xZune.Vlc.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="xZune.Vlc.Wpf, Version=15.10.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\xZune.Vlc.Wpf.15.10.25\lib\net45\xZune.Vlc.Wpf.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FoscamHDMotion.cs" />
-    <Compile Include="FoscamHDVideo.cs" />
+    <Compile Include="IImageReadyEventHandler.cs" />
+    <Compile Include="IImageReadyEventProvider.cs" />
+    <Compile Include="ImageReadyEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CameraControllers\CameraControllers.csproj">
-      <Project>{05775379-9981-47e2-a616-108f7deb111a}</Project>
-      <Name>CameraControllers</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <Compile Include="UpdatingImage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

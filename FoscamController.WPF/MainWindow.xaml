@@ -1,7 +1,7 @@
 ﻿<!--
 Project: FoscamController (http://FoscamController.codeplex.com)
 Filename: MainWindow.xaml
-Version: 20151026
+Version: 20151111
 -->
 
 <Window
@@ -13,53 +13,52 @@ Version: 20151026
   Title="MainWindow"
   >
 
-  <Grid>
+  <Window.Resources>
+    <Style TargetType="Button">
+      <Setter Property="Padding" Value="5,0"/>
+    </Style>
+  </Window.Resources>
+
+  <Grid x:Name="LayoutRoot">
     <Grid.RowDefinitions>
       <RowDefinition/>
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
 
-    <Image
-      x:Name="imgStream"
-      HorizontalAlignment="Stretch"
-      VerticalAlignment="Stretch"
-      />
+    <!-- Player control is added here dynamically -->
 
     <DockPanel
       Grid.Row="1"
-      LastChildFill="False"
+      LastChildFill="True"
       >
       <Button
         x:Name="btnUp"
         DockPanel.Dock="Top"
-        HorizontalAlignment="Center"
         Content="Up"
         Click="btnUp_Click"
         />
       <Button
         x:Name="btnDown"
         DockPanel.Dock="Bottom"
-        HorizontalAlignment="Center"
         Content="Down"
         Click="btnDown_Click"
         />
       <Button
+        x:Name="btnLeft"
+        DockPanel.Dock="Left"
+        Content="Left"
+        Click="btnLeft_Click"
+        />
+      <Button
         x:Name="btnRight"
         DockPanel.Dock="Right"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Bottom"
-        Height="20"
         Content="Right"
         Click="btnRight_Click"
         />
       <Button
-        x:Name="btnLeft"
-        DockPanel.Dock="Left"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Top"
-        Height="20"
-        Content="Left"
-        Click="btnLeft_Click"
+        x:Name="btnCenter"
+        Content="Center"
+        Click="btnCenter_Click" Height="18" VerticalAlignment="Top"
         />
     </DockPanel>
 
