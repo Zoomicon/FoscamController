@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoscamController.WPF", "FoscamController.WPF\FoscamController.WPF.csproj", "{71069F1D-AD17-42EF-B2DE-1B860DD657BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoscamController.Demo.WPF", "FoscamController.Demo.WPF\FoscamController.WPF.csproj", "{71069F1D-AD17-42EF-B2DE-1B860DD657BC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraControllers", "CameraControllers\CameraControllers.csproj", "{05775379-9981-47E2-A616-108F7DEB111A}"
 EndProject
