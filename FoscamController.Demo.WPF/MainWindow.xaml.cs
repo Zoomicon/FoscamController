@@ -11,12 +11,6 @@
 
 #define USE_FOSCAM_HD_CAMERA //uncomment this to use a Foscam HD Camera model instead of an MJPEG model
 
-#if USE_FOSCAM_HD_CAMERA
-using Camera.Foscam.HD;
-#else
-using Camera.Foscam.MJPEG;
-#endif
-
 using System.Windows;
 using System.Windows.Controls;
 
@@ -53,13 +47,15 @@ namespace Camera.Foscam
 
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-      #if USE_FOSCAM_HD_CAMERA
-      _video = new FoscamHDVideo(CAMERA_URL, USERNAME, PASSWORD);
-      _motion = new FoscamHDMotion(CAMERA_URL, USERNAME, PASSWORD);
-      #else
-      _video = new FoscamMJPEGVideo(CAMERA_URL, USERNAME, PASSWORD);
-      _motion = new FoscamMJPEGMotion(CAMERA_URL, USERNAME, PASSWORD);
-      #endif
+      FoscamCameraType cameraType =
+        #if USE_FOSCAM_HD_CAMERA
+        FoscamCameraType.FoscamHD;
+        #else
+        FoscamCameraType.FoscamMJPEG;
+        #endif
+
+      _video = FoscamVideo.CreateFoscamVideoController(cameraType, CAMERA_URL, USERNAME, PASSWORD);
+      _motion = FoscamMotion.CreateFoscamMotionController(cameraType, CAMERA_URL, USERNAME, PASSWORD);
 
       if (_video != null)
       {

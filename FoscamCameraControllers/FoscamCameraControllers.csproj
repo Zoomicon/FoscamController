@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FEABB775-B630-419C-A4B3-7D8C0241E033}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FoscamCameraControllers</RootNamespace>
+    <AssemblyName>FoscamCameraControllers</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="FoscamCameraType.cs" />
+    <Compile Include="FoscamVideo.cs" />
+    <Compile Include="FoscamMotion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CameraControllers\CameraControllers.csproj">
+      <Project>{05775379-9981-47e2-a616-108f7deb111a}</Project>
+      <Name>CameraControllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FoscamHDCameraController\FoscamHDCameraController.csproj">
+      <Project>{49d323b2-7a67-4558-a791-071f0190247e}</Project>
+      <Name>FoscamHDCameraController</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FoscamMJPEGCameraController\FoscamMJPEGCameraController.csproj">
+      <Project>{887028ed-0314-4a31-b096-71f7c1bd9d59}</Project>
+      <Name>FoscamMJPEGCameraController</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UpdatingImage\UpdatingImage.csproj">
+      <Project>{b5de0a77-50d0-4c97-a6e2-b3186c0ba0d0}</Project>
+      <Name>UpdatingImage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

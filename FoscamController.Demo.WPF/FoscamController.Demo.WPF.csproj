@@ -96,17 +96,9 @@
       <Project>{05775379-9981-47e2-a616-108f7deb111a}</Project>
       <Name>CameraControllers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FoscamHDCameraController\FoscamHDCameraController.csproj">
-      <Project>{49d323b2-7a67-4558-a791-071f0190247e}</Project>
-      <Name>FoscamHDCameraController</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FoscamMJPEGCameraController\FoscamMJPEGCameraController.csproj">
-      <Project>{887028ed-0314-4a31-b096-71f7c1bd9d59}</Project>
-      <Name>FoscamMJPEGCameraController</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UpdatingImage\UpdatingImage.csproj">
-      <Project>{b5de0a77-50d0-4c97-a6e2-b3186c0ba0d0}</Project>
-      <Name>UpdatingImage</Name>
+    <ProjectReference Include="..\FoscamCameraControllers\FoscamCameraControllers.csproj">
+      <Project>{feabb775-b630-419c-a4b3-7d8c0241e033}</Project>
+      <Name>FoscamCameraControllers</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
