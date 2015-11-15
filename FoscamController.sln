@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoscamController.Demo.WPF", "FoscamController.Demo.WPF\FoscamController.WPF.csproj", "{71069F1D-AD17-42EF-B2DE-1B860DD657BC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraControllers", "CameraControllers\CameraControllers.csproj", "{05775379-9981-47E2-A616-108F7DEB111A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoscamMJPEGCameraController", "FoscamMJPEGCameraController\FoscamMJPEGCameraController.csproj", "{887028ED-0314-4A31-B096-71F7C1BD9D59}"
@@ -20,16 +18,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoscamHDCameraController", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdatingImage", "UpdatingImage\UpdatingImage.csproj", "{B5DE0A77-50D0-4C97-A6E2-B3186C0BA0D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoscamController.Demo.WPF", "FoscamController.Demo.WPF\FoscamController.Demo.WPF.csproj", "{71069F1D-AD17-42EF-B2DE-1B860DD657BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{71069F1D-AD17-42EF-B2DE-1B860DD657BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{71069F1D-AD17-42EF-B2DE-1B860DD657BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{71069F1D-AD17-42EF-B2DE-1B860DD657BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{71069F1D-AD17-42EF-B2DE-1B860DD657BC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{05775379-9981-47E2-A616-108F7DEB111A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{05775379-9981-47E2-A616-108F7DEB111A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05775379-9981-47E2-A616-108F7DEB111A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -50,6 +46,10 @@ Global
 		{B5DE0A77-50D0-4C97-A6E2-B3186C0BA0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5DE0A77-50D0-4C97-A6E2-B3186C0BA0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5DE0A77-50D0-4C97-A6E2-B3186C0BA0D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71069F1D-AD17-42EF-B2DE-1B860DD657BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71069F1D-AD17-42EF-B2DE-1B860DD657BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71069F1D-AD17-42EF-B2DE-1B860DD657BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71069F1D-AD17-42EF-B2DE-1B860DD657BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
