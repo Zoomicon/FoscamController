@@ -2,6 +2,8 @@
 //Filename: FoscamMJPEGVideo.cs
 //Version: 20151111
 
+using Images;
+using Mime.MultiPart;
 using System;
 using System.IO;
 using System.Net;
@@ -9,9 +11,6 @@ using System.Net.Http;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
-
-using Mime.MultiPart;
-using Images;
 
 namespace Camera.Foscam.MJPEG
 {
