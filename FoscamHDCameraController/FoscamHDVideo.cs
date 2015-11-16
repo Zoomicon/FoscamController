@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: FoscamHDVideo.cs
-//Version: 20151111
+//Version: 20151116
 
 using System;
 using System.Windows;
@@ -48,7 +48,7 @@ namespace Camera.Foscam.HD
 
     #region --- Properties ---
 
-    public UIElement VideoPlayer
+    public UIElement VideoDisplay
     {
       get
       {

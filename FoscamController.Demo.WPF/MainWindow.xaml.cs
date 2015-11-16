@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: MainWindow.xaml.cs
-//Version: 20151111
+//Version: 20151116
 
 //Note: When using FOSCAM_HD_CAMERA, the VLC libraries have to be placed in a "LibVlc" subfolder, located in the
 // same folder as the application executable (the bin\Debug folder when using Visual Studio).
@@ -59,7 +59,7 @@ namespace Camera.Foscam
 
       if (_video != null)
       {
-        UIElement player = _video.VideoPlayer;
+        UIElement player = _video.VideoDisplay;
         player.SetValue(Grid.RowProperty, 0);
         //player.SetValue(Canvas.ZIndexProperty, -1);
         LayoutRoot.Children.Add(player);

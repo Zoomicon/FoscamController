@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: FoscamMJPEGVideo.cs
-//Version: 20151111
+//Version: 20151116
 
 using Images;
 using Mime.MultiPart;
@@ -53,7 +53,7 @@ namespace Camera.Foscam.MJPEG
 
     #region --- Properties ---
 
-    public UIElement VideoPlayer
+    public UIElement VideoDisplay
     {
       get
       {

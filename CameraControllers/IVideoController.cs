@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: IVideoController.cs
-//Version: 20151111
+//Version: 20151116
 
 using System.Windows;
 
@@ -11,7 +11,7 @@ namespace Camera
 
     #region --- Properties ---
 
-    UIElement VideoPlayer { get; }
+    UIElement VideoDisplay { get; }
 
     #endregion
 
