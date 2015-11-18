@@ -22,6 +22,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoscamController.Demo.WPF",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoscamCameraControllers", "FoscamCameraControllers\FoscamCameraControllers.csproj", "{FEABB775-B630-419C-A4B3-7D8C0241E033}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{36C7AD08-2961-44DB-B5C3-BC2B03DF21D5}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet\FoscamController.nuspec = NuGet\FoscamController.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
