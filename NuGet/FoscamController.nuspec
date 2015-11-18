@@ -11,7 +11,7 @@
         <iconUrl>http://foscam.com/Public/Home/images/index_img/logo.png</iconUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <developmentDependency>true</developmentDependency>
-        <description>This is a Library and Demo WPF program for controlling MJPEG and HD models of Foscam IP PTZ (Pan-Tilt-Zoom) Cameras and displaying MJPEG and H.264/RTSP video.</description>
+        <description>Display video and do PTZ control of Foscam MJPEG and HD (H.264/RTSP) IP Camera models</description>
         <releaseNotes />
         <copyright>Copyright 2015</copyright>
         <tags>Foscam RTSP H.264 MJPEG PTZ IP-Cameras media video streaming</tags>
