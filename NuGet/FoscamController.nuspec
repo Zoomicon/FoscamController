@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>FoscamController</id>
+        <version>1.0.0</version>
+        <title>FoscamController</title>
+        <authors>birbilis</authors>
+        <owners>birbilis</owners>
+        <licenseUrl>https://foscamcontroller.codeplex.com/SourceControl/latest#LICENSE.txt</licenseUrl>
+        <projectUrl>https://FoscamController.codeplex.com</projectUrl>
+        <iconUrl>http://foscam.com/Public/Home/images/index_img/logo.png</iconUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <developmentDependency>true</developmentDependency>
+        <description>This is a Library and Demo WPF program for controlling MJPEG and HD models of Foscam IP PTZ (Pan-Tilt-Zoom) Cameras and displaying MJPEG and H.264/RTSP video.</description>
+        <releaseNotes />
+        <copyright>Copyright 2015</copyright>
+        <tags>Foscam RTSP H.264 MJPEG PTZ IP-Cameras media video streaming</tags>
+        <dependencies>
+            <group targetFramework=".NETFramework4.5">
+                <dependency id="xZune.Vlc" version="15.10.25" />
+            </group>
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\CameraControllers\bin\Release\CameraControllers.dll" target="lib\net45\CameraControllers.dll" />
+        <file src="..\FoscamCameraControllers\bin\Release\FoscamCameraControllers.dll" target="lib\net45\FoscamCameraControllers.dll" />
+        <file src="..\FoscamHDCameraController\bin\Release\FoscamHDCameraController.dll" target="lib\net45\FoscamHDCameraController.dll" />
+        <file src="..\FoscamMJPEGCameraController\bin\Release\FoscamMJPEGCameraController.dll" target="lib\net45\FoscamMJPEGCameraController.dll" />
+        <file src="..\MimeMultiPart\bin\Release\MimeMultiPart.dll" target="lib\net45\MimeMultiPart.dll" />
+        <file src="..\UpdatingImage\bin\Release\UpdatingImage.dll" target="lib\net45\UpdatingImage.dll" />        
+    </files>
+</package>
