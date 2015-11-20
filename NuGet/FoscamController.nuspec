@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>FoscamController</id>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
         <title>FoscamController</title>
         <authors>birbilis</authors>
         <owners>birbilis</owners>
@@ -27,6 +27,6 @@
         <file src="..\FoscamHDCameraController\bin\Release\FoscamHDCameraController.dll" target="lib\net45\FoscamHDCameraController.dll" />
         <file src="..\FoscamMJPEGCameraController\bin\Release\FoscamMJPEGCameraController.dll" target="lib\net45\FoscamMJPEGCameraController.dll" />
         <file src="..\MimeMultiPart\bin\Release\MimeMultiPart.dll" target="lib\net45\MimeMultiPart.dll" />
-        <file src="..\UpdatingImage\bin\Release\UpdatingImage.dll" target="lib\net45\UpdatingImage.dll" />        
+        <file src="..\UpdatingImage\bin\Release\UpdatingImage.dll" target="lib\net45\UpdatingImage.dll" />
     </files>
 </package>
