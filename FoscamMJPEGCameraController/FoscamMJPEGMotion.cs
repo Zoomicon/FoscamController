@@ -1,6 +1,8 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: FoscamMJPEGMotion.cs
-//Version: 20151028
+//Version: 20151120
+
+//note: commands found from http://blogs.infosupport.com/writing-an-ip-camera-viewer-in-c-5-0 and https://wiki.zoneminder.com/Foscam_Clones
 
 using System;
 using System.Net;
@@ -17,7 +19,22 @@ namespace Camera.Foscam.MJPEG
     private const string ERROR_TITLE = "Error";
     private const string ERROR_CONNECTION = "Have you set the correct values for Camera URL and Username/Password in the code?";
 
-    private const string _panningRelativeUri = "/decoder_control.cgi?command={0}";
+    private const string _relativeUri = "/decoder_control.cgi?command={0}";
+
+    public const int COMMAND_MOTION_STOP = COMMAND_MOTION_UP_STOP; //should work for all motion stops
+    public const int COMMAND_MOTION_UP_STOP = 1;
+    public const int COMMAND_MOTION_UP = 0;
+    public const int COMMAND_MOTION_DOWN_STOP = 3;
+    public const int COMMAND_MOTION_DOWN = 2;
+    public const int COMMAND_MOTION_LEFT_STOP = 7;
+    public const int COMMAND_MOTION_LEFT = 6;
+    public const int COMMAND_MOTION_RIGHT_STOP = 5;
+    public const int COMMAND_MOTION_RIGHT = 4;
+    public const int COMMAND_MOTION_UP_LEFT = 90;
+    public const int COMMAND_MOTION_UP_RIGHT = 91;
+    public const int COMMAND_MOTION_DOWN_LEFT = 92;
+    public const int COMMAND_MOTION_DOWN_RIGHT = 93;
+    public const int COMMAND_MOTION_GOTO_CENTER = 25;
 
     #endregion
 
@@ -45,11 +62,16 @@ namespace Camera.Foscam.MJPEG
 
     #region --- Methods ---
 
-    private async void SendPanCommand(int commandNumber)
+    private void SendCommand(int command)
+    {
+      SendCommand(command.ToString());
+    }
+
+    private async void SendCommand(string command)
     {
       try {
         HttpResponseMessage result;
-        result = await _client.GetAsync(string.Format(_panningRelativeUri, commandNumber));
+        result = await _client.GetAsync(string.Format(_relativeUri, command));
         result.EnsureSuccessStatusCode();
       }
       catch(Exception e) //TODO: if caller can catch the exception (if no issue with async), maybe let it pass through and show message at caller
@@ -60,65 +82,73 @@ namespace Camera.Foscam.MJPEG
 
     public void MotionStop()
     {
-      throw new NotImplementedException(); //TODO
+      SendCommand(COMMAND_MOTION_UP_STOP);
     }
 
     public void MotionUp()
     {
-      int command = _panning ? 1 : 0;
-      SendPanCommand(command);
+      int command = _panning ? COMMAND_MOTION_UP_STOP : COMMAND_MOTION_UP;
+      SendCommand(command);
       _panning = !_panning;
     }
 
     public void MotionDown()
     {
-      int command = _panning ? 3 : 2;
-      SendPanCommand(command);
+      int command = _panning ? COMMAND_MOTION_DOWN_STOP : COMMAND_MOTION_DOWN;
+      SendCommand(command);
       _panning = !_panning;
     }
 
     public void MotionLeft()
     {
-      int command = _panning ? 7 : 6;
-      SendPanCommand(command);
+      int command = _panning ? COMMAND_MOTION_LEFT_STOP : COMMAND_MOTION_LEFT;
+      SendCommand(command);
       _panning = !_panning;
     }
 
     public void MotionRight()
     {
-      int command = _panning ? 5 : 4;
-      SendPanCommand(command);
+      int command = _panning ? COMMAND_MOTION_RIGHT_STOP : COMMAND_MOTION_RIGHT;
+      SendCommand(command);
       _panning = !_panning;
     }
 
     public void MotionUpLeft()
     {
-      throw new NotImplementedException(); //TODO
+      int command = _panning ? COMMAND_MOTION_STOP : COMMAND_MOTION_UP_LEFT;
+      SendCommand(command);
+      _panning = !_panning;
     }
 
     public void MotionUpRight()
     {
-      throw new NotImplementedException(); //TODO
+      int command = _panning ? COMMAND_MOTION_STOP : COMMAND_MOTION_UP_RIGHT;
+      SendCommand(command);
+      _panning = !_panning;
     }
 
     public void MotionDownLeft()
     {
-      throw new NotImplementedException(); //TODO
+      int command = _panning ? COMMAND_MOTION_STOP : COMMAND_MOTION_DOWN_LEFT;
+      SendCommand(command);
+      _panning = !_panning;
     }
 
     public void MotionDownRight()
     {
-      throw new NotImplementedException(); //TODO
+      int command = _panning ? COMMAND_MOTION_STOP : COMMAND_MOTION_DOWN_RIGHT;
+      SendCommand(command);
+      _panning = !_panning;
     }
 
     public void MotionGotoCenter()
     {
-      throw new NotImplementedException(); //TODO
+      SendCommand(COMMAND_MOTION_GOTO_CENTER);
     }
 
     public void MotionGotoPreset(string name)
     {
-      throw new NotImplementedException(); //TODO
+      SendCommand(name);
     }
 
     #endregion

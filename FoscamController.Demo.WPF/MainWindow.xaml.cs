@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: MainWindow.xaml.cs
-//Version: 20151116
+//Version: 20151120
 
 //Note: When using FOSCAM_HD_CAMERA, the VLC libraries have to be placed in a "LibVlc" subfolder, located in the
 // same folder as the application executable (the bin\Debug folder when using Visual Studio).
@@ -23,16 +23,17 @@ namespace Camera.Foscam
   {
     #region --- Constants ---
 
-    private const string CAMERA_URL = "http://someIPorDomainName:somePort"; //Foscam HD video controller knows how to replace the HTTP:// with RTSP:// to get to the RTSP video stream, so use the base URL of the camera here (the one it's administration page uses), plus don't use a "/" char at the end
-    private const string USERNAME = "user";
-    private const string PASSWORD = "pwd";
+    private const string CAMERA_URL = "http://address:port"; //Foscam HD video controller knows how to replace the HTTP:// with RTSP:// to get to the RTSP video stream, so use the base URL of the camera here (the one it's administration page uses), plus don't use a "/" char at the end
+    private const string USERNAME = "admin";
+    private const string PASSWORD = "admin";
 
     #endregion
 
     #region --- Fields ---
 
-    private IMotionController _motion;
     private IVideoController _video;
+    private IMotionController _motion;
+    private IZoomController _zoom;
 
     #endregion
 
@@ -56,6 +57,7 @@ namespace Camera.Foscam
 
       _video = FoscamVideo.CreateFoscamVideoController(cameraType, CAMERA_URL, USERNAME, PASSWORD);
       _motion = FoscamMotion.CreateFoscamMotionController(cameraType, CAMERA_URL, USERNAME, PASSWORD);
+      _zoom = FoscamZoom.CreateFoscamZoomController(cameraType, CAMERA_URL, USERNAME, PASSWORD);
 
       if (_video != null)
       {
@@ -84,10 +86,12 @@ namespace Camera.Foscam
 
     #region --- Events ---
 
-    private void btnCenter_Click(object sender, RoutedEventArgs e)
+    #region 1st row
+
+    private void btnUpLeft_Click(object sender, RoutedEventArgs e)
     {
       if (_motion != null)
-        _motion.MotionGotoCenter();
+        _motion.MotionUpLeft();
     }
 
     private void btnUp_Click(object sender, RoutedEventArgs e)
@@ -96,16 +100,26 @@ namespace Camera.Foscam
         _motion.MotionUp();
     }
 
-    private void btnDown_Click(object sender, RoutedEventArgs e)
+    private void btnUpRight_Click(object sender, RoutedEventArgs e)
     {
       if (_motion != null)
-        _motion.MotionDown();
+        _motion.MotionUpRight();
     }
+
+    #endregion
+
+    #region 2nd row
 
     private void btnLeft_Click(object sender, RoutedEventArgs e)
     {
       if (_motion != null)
         _motion.MotionLeft();
+    }
+
+    private void btnCenter_Click(object sender, RoutedEventArgs e)
+    {
+      if (_motion != null)
+        _motion.MotionGotoCenter();
     }
 
     private void btnRight_Click(object sender, RoutedEventArgs e)
@@ -115,6 +129,59 @@ namespace Camera.Foscam
     }
 
     #endregion
+
+    #region 3rd row
+
+    private void btnDownLeft_Click(object sender, RoutedEventArgs e)
+    {
+      if (_motion != null)
+        _motion.MotionDownLeft();
+    }
+
+    private void btnDown_Click(object sender, RoutedEventArgs e)
+    {
+      if (_motion != null)
+        _motion.MotionDown();
+    }
+
+    private void btnDownRight_Click(object sender, RoutedEventArgs e)
+    {
+      if (_motion != null)
+        _motion.MotionDownRight();
+    }
+
+    #endregion
+
+    #region 4th row
+
+    private void btnZoomOut_Click(object sender, RoutedEventArgs e)
+    {
+      if (_zoom != null)
+        _zoom.ZoomOut();
+    }
+
+    /// <summary>
+    /// On stop button click, stop any current motion and zooming
+    /// </summary>
+    private void btnStop_Click(object sender, RoutedEventArgs e)
+    {
+      if (_motion != null)
+        _motion.MotionStop();
+
+      if (_zoom != null)
+        _zoom.ZoomStop();
+    }
+
+    private void btnZoomIn_Click(object sender, RoutedEventArgs e)
+    {
+      if (_zoom != null)
+        _zoom.ZoomIn();
+    }
+
+    #endregion
+
+#endregion
+
   }
 
 }

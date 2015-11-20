@@ -1,6 +1,8 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: FoscamHDMotion.cs
-//Version: 20151111
+//Version: 20151120
+
+//commands found from http://www.ipcamcontrol.net/files/Foscam%20IPCamera%20CGI%20User%20Guide-V1.0.4.pdf
 
 using System;
 using System.Net.Http;
@@ -16,7 +18,7 @@ namespace Camera.Foscam.HD
     private const string ERROR_TITLE = "Error";
     private const string ERROR_CONNECTION = "Have you set the correct values for Camera URL and Username/Password in the code?";
 
-    private const string COMMAND_MOTION_STOP = "ptsStopRun";
+    private const string COMMAND_MOTION_STOP = "ptzStopRun";
     private const string COMMAND_MOTION_UP = "ptzMoveUp";
     private const string COMMAND_MOTION_DOWN = "ptzMoveDown";
     private const string COMMAND_MOTION_LEFT = "ptzMoveLeft";
@@ -37,7 +39,7 @@ namespace Camera.Foscam.HD
 
     #region --- Fields ---
 
-    private string _commandRelativeUri = "/cgi-bin/CGIProxy.fcgi?usr=%USER%&pwd=%PASSWORD%&cmd={0}";
+    private string _commandRelativeUri = "/cgi-bin/CGIProxy.fcgi?usr={0}&pwd={1}&cmd={2}"; //the constructor expects first param in this format string to be user, 2nd to be password and third to be a placeholder for commands
 
     private string _url;
     private HttpClient _client;
@@ -50,7 +52,7 @@ namespace Camera.Foscam.HD
     {
       WebRequestHandler handler = new WebRequestHandler();
       //handler.Credentials = new NetworkCredential(username, password); //not used
-      _commandRelativeUri=_commandRelativeUri.Replace("%USER%", username).Replace("%PASSWORD%", password);
+      _commandRelativeUri = String.Format(_commandRelativeUri, username, password, "{0}"); //we pass "{0}" at the end since we're generating a new format string
 
       _url = url;
       _client = new HttpClient(handler);

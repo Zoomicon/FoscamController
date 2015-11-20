@@ -38,6 +38,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FoscamMJPEGZoom.cs" />
     <Compile Include="FoscamMJPEGVideo.cs" />
     <Compile Include="FoscamMJPEGMotion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

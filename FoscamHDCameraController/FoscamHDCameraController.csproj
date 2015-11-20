@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FoscamHDZoom.cs" />
     <Compile Include="FoscamHDMotion.cs" />
     <Compile Include="FoscamHDVideo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

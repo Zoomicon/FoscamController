@@ -8,14 +8,11 @@ Description
 
 This is a Library and Demo WPF program for controlling MJPEG and HD models of Foscam IP PTZ (Pan-Tilt-Zoom) Cameras and displaying MJPEG and H.264/RTSP video
 
-MJPEG part is based on information and code from this article:
-http://blogs.infosupport.com/writing-an-ip-camera-viewer-in-c-5-0
-
 
 Features
 --------
 
-* Motion Control: both MJPEG and HD Foscam camera models
+* Motion and Zoom (where available) Control: both MJPEG and HD Foscam camera models
 
 Alternative is to use ONVIF (see port settings in the camera browser-based configuration pages).
 Can use OZEKI ONVIF IP Camera SDK for C# (commercial - http://www.camera-sdk.com/p_113-ozeki-camera-sdk-licencing-faq-onvif.html),
@@ -27,6 +24,9 @@ at  http://http://www.onvif.org/Documents/Specifications.aspx (note that not all
 * Video: both MJPEG and HD Foscam (using RTSP+H.264) camera models
 
 Uses xZune.Vlc - https://github.com/higankanshi/xZune.Vlc (via NuGet package - see note below on copying the native VLC libraries from that repository for your executable to find)
+
+MJPEG part is based on information and code from this article:
+http://blogs.infosupport.com/writing-an-ip-camera-viewer-in-c-5-0
 
 
 Usage
@@ -48,7 +48,7 @@ change to IP or DNS name and port (say http://someIPaddress:somePort) for the ca
 change to camera username and password respectively
 
 * Note:
-When using FOSCAMHDCAMERA, the VLC libraries have to be placed in a "LibVlc" subfolder, located in the
+When using FOSCAM_HD_CAMERA, the VLC libraries have to be placed in a "LibVlc" subfolder, located in the
 same folder as the application executable (the bin\Debug folder when using Visual Studio).
 Can override that path using an optional parameter passed to FoscamHDVideo class constructor (there is also an
 extra optional parameter at that class for VLC options)
@@ -64,4 +64,4 @@ Change History
 
 * 20130604
 [Chris van Beek / InfoSupport.com]
-- Original version
+- Original sample app for Foscam MJPEG models

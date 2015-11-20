@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="FoscamCameraType.cs" />
+    <Compile Include="FoscamZoom.cs" />
     <Compile Include="FoscamVideo.cs" />
     <Compile Include="FoscamMotion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
