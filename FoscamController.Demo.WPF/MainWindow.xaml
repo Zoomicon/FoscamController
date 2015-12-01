@@ -1,13 +1,14 @@
 ﻿<!--
 Project: FoscamController (http://FoscamController.codeplex.com)
 Filename: MainWindow.xaml
-Version: 20151120
+Version: 20151201
 -->
 
 <Window
   x:Class="Camera.Foscam.MainWindow"
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:ptz="clr-namespace:Camera;assembly=CameraControllers"
 
   Width="525" Height="350"
   WindowStartupLocation="CenterScreen"
@@ -24,7 +25,7 @@ Version: 20151120
   <Grid x:Name="LayoutRoot">
     <Grid.RowDefinitions>
       <RowDefinition/>
-      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto" />
     </Grid.RowDefinitions>
 
     <!-- Region: Player -->
@@ -35,125 +36,9 @@ Version: 20151120
 
     <!-- Region: Control Buttons -->
 
-    <Grid Grid.Row="1">
-      <Grid.RowDefinitions>
-        <RowDefinition/>
-        <RowDefinition/>
-        <RowDefinition/>
-        <RowDefinition/>
-      </Grid.RowDefinitions>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition/>
-        <ColumnDefinition/>
-        <ColumnDefinition/>
-      </Grid.ColumnDefinitions>
+    <ptz:PTZControl x:Name="ptz" Grid.Row="1"/>
 
-      <!-- Region: 1st row -->
-
-      <Button
-        x:Name="btnUpLeft"
-        Grid.Row="0" Grid.Column="0"
-        Content="Up-Left"
-        Click="btnUpLeft_Click"
-        />
-
-      <Button
-        x:Name="btnUp"
-        Grid.Row="0" Grid.Column="1"
-        Content="Up"
-        Click="btnUp_Click"
-        />
-
-      <Button
-        x:Name="btnUpRight"
-        Grid.Row="0" Grid.Column="2"
-        Content="Up-Right"
-        Click="btnUpRight_Click"
-        />
-
-      <!-- EndRegion -->
-
-      <!-- Region: 2nd row -->
-
-      <Button
-        x:Name="btnLeft"
-        Grid.Row="1" Grid.Column="0"
-        Content="Left"
-        Click="btnLeft_Click"
-        />
-
-      <Button
-        x:Name="btnCenter"
-        Grid.Row="1" Grid.Column="1"
-        Content="Center"
-        Click="btnCenter_Click"
-        />
-
-      <Button
-        x:Name="btnRight"
-        Grid.Row="1" Grid.Column="2"
-        Content="Right"
-        Click="btnRight_Click"
-        />
-
-      <!-- EndRegion -->
-
-      <!-- Region: 3rd row -->
-
-      <Button
-        x:Name="btnDownLeft"
-        Grid.Row="2" Grid.Column="0"
-        Content="Down-Left"
-        Click="btnDownLeft_Click"
-        />
-
-      <Button
-        x:Name="btnDown"
-        Grid.Row="2" Grid.Column="1"
-        Content="Down"
-        Click="btnDown_Click"
-        />
-
-      <Button
-        x:Name="btnDownRight"
-        Grid.Row="2" Grid.Column="2"
-        Content="Down-Right"
-        Click="btnDownRight_Click"
-        />
-
-      <!-- EndRegion -->
-
-      <!-- Region: 4th row -->
-
-      <Button
-        x:Name="btnZoomOut"
-        Grid.Row="3" Grid.Column="0"
-        Margin="0,3,0,0"
-        Content="Zoom Out"
-        Click="btnZoomOut_Click"
-        />
-
-      <Button
-        x:Name="btnStop"
-        Grid.Row="3" Grid.Column="1"
-        Margin="0,3,0,0"
-        Content="Stop"
-        Click="btnStop_Click"
-        />
-
-      <Button
-        x:Name="btnZoomIn"
-        Grid.Row="3" Grid.Column="2"
-        Margin="0,3,0,0"
-        Content="Zoom In"
-        Click="btnZoomIn_Click"
-        />
-
-      <!-- EndRegion -->
-
-      <!-- EndRegion -->
-
-    </Grid>
+    <!-- EndRegion -->
 
   </Grid>
 
