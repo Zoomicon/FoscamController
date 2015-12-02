@@ -7,7 +7,12 @@
 // Can override that path using an optional parameter passed to FoscamHDVideo class constructor (there is also an
 // extra optional parameter at that class for VLC options)
 // That subfolder can be copied from the repository available at http://github.com/birbilis/xZune.Vlc
+// or one can install the xZune.Vlc.Lib NuGet package at their application, but they should make sure to select all
+// the native DLLs etc. it adds under VlcLib subfolder in the project and set Properties/Copy to output folder to
+// "Copy if newer" (can select multiple files of same type from there [.jar/.dll/.dat] and set that setting so it's
+// 3 steps, one for each filetype to set it)
 
+//Note: IMPORTANT - Application projects that use xZune.Vlc need the Prefer 32-bit flag set at Properties/Build page
 
 #define USE_FOSCAM_HD_CAMERA //uncomment this to use a Foscam HD Camera model instead of an MJPEG model
 
