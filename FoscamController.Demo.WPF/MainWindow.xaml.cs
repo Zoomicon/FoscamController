@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: MainWindow.xaml.cs
-//Version: 20151201
+//Version: 20151202
 
 //Note: When using FOSCAM_HD_CAMERA, the VLC libraries have to be placed in a "LibVlc" subfolder, located in the
 // same folder as the application executable (the bin\Debug folder when using Visual Studio).
@@ -23,9 +23,9 @@ namespace Camera.Foscam
   {
     #region --- Constants ---
 
-    private const string CAMERA_URL = "http://host:port"; //Foscam HD video controller knows how to replace the HTTP:// with RTSP:// to get to the RTSP video stream, so use the base URL of the camera here (the one it's administration page uses), plus don't use a "/" char at the end
-    private const string USERNAME = "admin";
-    private const string PASSWORD = "pass";
+    private const string CAMERA_URL = "http://192.168.241.14:88"; //Foscam HD video controller knows how to replace the HTTP:// with RTSP:// to get to the RTSP video stream, so use the base URL of the camera here (the one it's administration page uses), plus don't use a "/" char at the end
+    private const string USERNAME = "admin1";
+    private const string PASSWORD = "admin1";
 
     #endregion
 

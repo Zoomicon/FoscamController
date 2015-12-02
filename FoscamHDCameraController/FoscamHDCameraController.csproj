@@ -41,11 +41,11 @@
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
     <Reference Include="xZune.Vlc, Version=15.10.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\xZune.Vlc.15.11.24\lib\net40\xZune.Vlc.dll</HintPath>
+      <HintPath>..\packages\xZune.Vlc.15.11.24\lib\net45\xZune.Vlc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="xZune.Vlc.Wpf, Version=15.10.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\xZune.Vlc.Wpf.15.11.24\lib\net40\xZune.Vlc.Wpf.dll</HintPath>
+      <HintPath>..\packages\xZune.Vlc.Wpf.15.11.24\lib\net45\xZune.Vlc.Wpf.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

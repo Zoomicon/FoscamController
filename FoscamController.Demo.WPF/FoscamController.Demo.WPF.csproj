@@ -24,7 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,7 +49,7 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationFramework" />
     <Reference Include="xZune.Vlc, Version=15.10.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\xZune.Vlc.15.10.25\lib\net45\xZune.Vlc.dll</HintPath>
+      <HintPath>..\packages\xZune.Vlc.15.11.24\lib\net45\xZune.Vlc.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
