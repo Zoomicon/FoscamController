@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: FoscamHDVideo.cs
-//Version: 20151120
+//Version: 20151204
 
 using System;
 using System.Windows;
@@ -30,7 +30,8 @@ namespace Camera.Foscam.HD
       "--verbose=2",
       "--no-sub-autodetect-file",
       "--rtsp-tcp", //needed to pass RTSP through a VPN
-      "--rtsp-frame-buffer-size=500000" //needed to avoid Live555 error when using --rtsp-tcp (RTCPInstance error: Hit limit when reading incoming packet over TCP. Increase "maxRTCPPacketSize")
+      "--rtsp-frame-buffer-size=500000", //needed to avoid Live555 error when using --rtsp-tcp (RTCPInstance error: Hit limit when reading incoming packet over TCP. Increase "maxRTCPPacketSize")
+      "--network-caching=200" //caching value for network resources in msec (needed for low frame lag - if broken frames need to increase it)
     };
 
     /* Other maybe useful parameters from https://wiki.videolan.org/VLC_command-line_help
