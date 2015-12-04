@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>FoscamController</id>
-        <version>1.4.0</version>
+        <version>1.5.0</version>
         <title>FoscamController</title>
         <authors>birbilis</authors>
         <owners>birbilis</owners>
@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <developmentDependency>true</developmentDependency>
         <description>Display video and do PTZ control of Foscam MJPEG and HD (H.264/RTSP) IP Camera models</description>
-        <releaseNotes />
+        <releaseNotes>Reduced frame lag in HD model's video (VLC option --network-caching=200, increase if you have broken frames</releaseNotes>
         <copyright>Copyright 2015</copyright>
         <tags>Foscam RTSP H.264 MJPEG PTZ IP-Cameras media video streaming</tags>
         <dependencies>
