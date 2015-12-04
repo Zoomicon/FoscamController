@@ -29,9 +29,9 @@ namespace Camera.Foscam.HD
       "--logfile=log.txt",
       "--verbose=2",
       "--no-sub-autodetect-file",
-      "--rtsp-tcp", //needed to pass RTSP through a VPN
-      "--rtsp-frame-buffer-size=500000", //needed to avoid Live555 error when using --rtsp-tcp (RTCPInstance error: Hit limit when reading incoming packet over TCP. Increase "maxRTCPPacketSize")
-      "--network-caching=200" //caching value for network resources in msec (needed for low frame lag - if broken frames need to increase it)
+      //"--rtsp-tcp", //needed to pass RTSP through a VPN
+      //"--rtsp-frame-buffer-size=500000", //needed to avoid Live555 error when using --rtsp-tcp (RTCPInstance error: Hit limit when reading incoming packet over TCP. Increase "maxRTCPPacketSize")
+      "--network-caching=500" //caching value for network resources in msec (needed for low frame lag - if broken frames need to increase it)
     };
 
     /* Other maybe useful parameters from https://wiki.videolan.org/VLC_command-line_help
@@ -66,7 +66,7 @@ namespace Camera.Foscam.HD
       string urlPrefix = "rtsp://" + username + ":" + password + "@";
       _url = url.Replace("http://", urlPrefix).Replace("https://", urlPrefix);
       _url += VIDEO_RELATIVE_URL;
-      _libVlcPath = libVlcPath;
+      _libVlcPath = libVlcPath ?? DEFAULT_LIBVLC_PATH;
       _vlcOptions = vlcOptions ?? DEFAULT_VLC_OPTIONS;
     }
 
