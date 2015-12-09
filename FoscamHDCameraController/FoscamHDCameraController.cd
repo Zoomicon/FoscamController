@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Camera.Foscam.HD.FoscamHDMotion" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>EIQgIAAACCAIAEoQAAAAAABMEYQAAgAICACAEwAABQI=</HashCode>
+      <FileName>FoscamHDMotion.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Camera.Foscam.HD.FoscamHDVideo" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAiAAAAACAAQAAAgAECAAAAAQAAAAIAAAAAAAAEAA=</HashCode>
+      <FileName>FoscamHDVideo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Camera.Foscam.HD.FoscamHDZoom" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAACAIEAAAIAEAAAAAAAAAEAIQAAACACAAAEQAAAAA=</HashCode>
+      <FileName>FoscamHDZoom.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

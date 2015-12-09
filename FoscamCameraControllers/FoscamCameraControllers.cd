@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Camera.Foscam.FoscamMotion">
+    <Position X="0.5" Y="2.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAAAAABAAAA=</HashCode>
+      <FileName>FoscamMotion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Camera.Foscam.FoscamVideo">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAIAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>FoscamVideo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Camera.Foscam.FoscamZoom">
+    <Position X="0.5" Y="4" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAQAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>FoscamZoom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Camera.Foscam.FoscamCameraType">
+    <Position X="3.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>FoscamCameraType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
