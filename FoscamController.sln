@@ -29,6 +29,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{36C7AD08
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagrams", "Diagrams", "{79F208E7-F0E1-4CC2-878C-43A533008D08}"
+	ProjectSection(SolutionItems) = preProject
+		CameraControllers\CameraControllers.cd = CameraControllers\CameraControllers.cd
+		FoscamCameraControllers\FoscamCameraControllers.cd = FoscamCameraControllers\FoscamCameraControllers.cd
+		FoscamHDCameraController\FoscamHDCameraController.cd = FoscamHDCameraController\FoscamHDCameraController.cd
+		FoscamMJPEGCameraController\FoscamMJPEGCameraController.cd = FoscamMJPEGCameraController\FoscamMJPEGCameraController.cd
+		MimeMultiPart\MimeMultiPart.cd = MimeMultiPart\MimeMultiPart.cd
+		UpdatingImage\UpdatingImage.cd = UpdatingImage\UpdatingImage.cd
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
