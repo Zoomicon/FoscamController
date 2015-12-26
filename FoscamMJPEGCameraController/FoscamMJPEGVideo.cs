@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: FoscamMJPEGVideo.cs
-//Version: 20151116
+//Version: 20151227
 
 using Images;
 using Mime.MultiPart;
@@ -121,7 +121,8 @@ namespace Camera.Foscam.MJPEG
         _currentFrame.BeginInit();
         _currentFrame.StreamSource = frameStream;
         _currentFrame.EndInit();
-        OnImageReady();
+        _currentFrame.Freeze(); //this is needed to access from other threads, else error "The calling thread cannot access this object because a different thread owns it" may be thrown
+          OnImageReady();
       }));
     }
 

@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: MultiPartStream.cs
-//Version: 20151027
+//Version: 20151226
 
 using System.IO;
 using System.Text;
@@ -17,7 +17,7 @@ namespace Mime.MultiPart
     //Specs say that the body of each part and it's header are separated by two CRLFs
     private byte[] _seperatorBytes = Encoding.UTF8.GetBytes("\r\n\r\n");
     private byte[] _headerbytes = new byte[100];
-    private Regex _contRegex = new Regex("Content-Length: (?<length>[0-9]+)\r\n", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+    private Regex _contRegex = new Regex(@"Content-Length:\s?(?<length>[0-9]+)\r\n", RegexOptions.Compiled | RegexOptions.IgnoreCase);
     private BinaryReader _reader;
 
     #endregion
