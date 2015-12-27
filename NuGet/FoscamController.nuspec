@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>FoscamController</id>
-        <version>1.6.0</version>
+        <version>1.7.0</version>
         <title>FoscamController</title>
         <authors>birbilis</authors>
         <owners>birbilis</owners>
@@ -11,7 +11,7 @@
         <iconUrl>http://foscam.com/Public/Home/images/index_img/logo.png</iconUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <developmentDependency>true</developmentDependency>
-        <description>Display video and do PTZ control of Foscam MJPEG and HD (H.264/RTSP) IP Camera models</description>
+        <description>Display video and do PTZ control of Foscam MJPEG and HD (H.264/RTSP) IP Camera models (and clones like Bionics Safecam and Robocam models)</description>
         <releaseNotes>Increased --network-caching to 500 instead of 200 and removed --rtsp-tcp related options from defaults. Added parameters at FoscamVideo class factory to set them at controller construction</releaseNotes>
         <copyright>Copyright 2015</copyright>
         <tags>Foscam RTSP H.264 MJPEG PTZ IP-Cameras media video streaming</tags>
