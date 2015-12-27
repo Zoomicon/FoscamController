@@ -48,8 +48,8 @@
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="xZune.Vlc, Version=15.10.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\xZune.Vlc.15.11.24\lib\net45\xZune.Vlc.dll</HintPath>
+    <Reference Include="xZune.Vlc, Version=15.10.25.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\xZune.Vlc.15.12.22\lib\net45\x86\xZune.Vlc.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

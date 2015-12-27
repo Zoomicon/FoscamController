@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>FoscamController</id>
-        <version>1.7.0</version>
+        <version>1.8.0</version>
         <title>FoscamController</title>
         <authors>birbilis</authors>
         <owners>birbilis</owners>
@@ -17,7 +17,7 @@
         <tags>Foscam RTSP H.264 MJPEG PTZ IP-Cameras media video streaming</tags>
         <dependencies>
             <group targetFramework="net45">
-                <dependency id="xZune.Vlc.Wpf" version="15.11.24" />
+                <dependency id="xZune.Vlc.Wpf" version="15.12.26" />
             </group>
         </dependencies>
     </metadata>

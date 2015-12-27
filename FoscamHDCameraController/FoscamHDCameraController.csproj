@@ -40,12 +40,12 @@
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
-    <Reference Include="xZune.Vlc, Version=15.10.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\xZune.Vlc.15.11.24\lib\net45\xZune.Vlc.dll</HintPath>
+    <Reference Include="xZune.Vlc, Version=15.10.25.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\xZune.Vlc.15.12.22\lib\net45\x86\xZune.Vlc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="xZune.Vlc.Wpf, Version=15.10.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\xZune.Vlc.Wpf.15.11.24\lib\net45\xZune.Vlc.Wpf.dll</HintPath>
+    <Reference Include="xZune.Vlc.Wpf, Version=15.10.25.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\xZune.Vlc.Wpf.15.12.26\lib\net45\x86\xZune.Vlc.Wpf.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -63,7 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="FoscamHDCameraController.cd" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: FoscamHDVideo.cs
-//Version: 20151204
+//Version: 20151228
 
 using System;
 using System.Windows;
@@ -93,7 +93,7 @@ namespace Camera.Foscam.HD
 
     public void StartVideo()
     {
-      _player.BeginStop((ar) =>
+      _player.BeginStop(() =>
       {
         _player.LoadMedia(new Uri(_url));
         _player.Play();
