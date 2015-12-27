@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: AutomaticMultiPartReader.cs
-//Version: 20151027
+//Version: 20151228
 
 using System;
 
@@ -13,7 +13,6 @@ namespace Mime.MultiPart
 
     private MultiPartStream _mps;
     private bool _reading = false;
-    private byte[] _currentPart;
 
     #endregion
 
@@ -32,15 +31,12 @@ namespace Mime.MultiPart
     {
       _reading = true;
       while (_reading)
-      {
-        _currentPart = await _mps.NextPartAsync().ConfigureAwait(false);
-        OnPartReady();
-      }
+        OnPartReady(await _mps.NextPartAsync().ConfigureAwait(false));
+      _mps.Close(); //not calling Close from StopProcessing, waiting for current part to finish before calling Close (anyway, NextPartAsync returns null in case of error and OnPartReady is ignoring null argument)
     }
 
     public void StopProcessing()
     {
-      _mps.Close();
       _reading = false;
     }
 
@@ -50,14 +46,10 @@ namespace Mime.MultiPart
 
     public event EventHandler<PartReadyEventArgs> PartReady;
 
-    protected virtual void OnPartReady()
+    protected virtual void OnPartReady(byte[] currentPart)
     {
-      if (PartReady != null)
-      {
-        PartReadyEventArgs args = new PartReadyEventArgs();
-        args.Part = _currentPart;
-        PartReady(this, args);
-      }
+      if ((currentPart != null) && (PartReady != null))
+        PartReady(this, new PartReadyEventArgs() { Part = currentPart });
     }
 
     #endregion

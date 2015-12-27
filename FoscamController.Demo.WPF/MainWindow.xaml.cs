@@ -1,6 +1,6 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: MainWindow.xaml.cs
-//Version: 20151202
+//Version: 20151228
 
 //Note: When using FOSCAM_HD_CAMERA, the VLC libraries have to be placed in a "LibVlc" subfolder, located in the
 // same folder as the application executable (the bin\Debug folder when using Visual Studio).
@@ -39,8 +39,6 @@ namespace Camera.Foscam
     public MainWindow()
     {
       InitializeComponent();
-      this.Loaded += MainWindow_Loaded;
-      this.Closing += MainWindow_Closing;
     }
 
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)

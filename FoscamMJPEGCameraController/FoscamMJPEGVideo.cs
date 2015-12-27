@@ -1,6 +1,8 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: FoscamMJPEGVideo.cs
-//Version: 20151227
+//Version: 20151228
+
+//note: tested with BIONICS Robocam 2+ (a FOSCAM MJPEG IP camera clone)
 
 using Images;
 using Mime.MultiPart;

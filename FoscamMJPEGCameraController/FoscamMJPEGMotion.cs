@@ -1,8 +1,9 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: FoscamMJPEGMotion.cs
-//Version: 20151120
+//Version: 20151228
 
 //note: commands found from http://blogs.infosupport.com/writing-an-ip-camera-viewer-in-c-5-0 and https://wiki.zoneminder.com/Foscam_Clones
+//      tested with BIONICS Robocam 2+ (a FOSCAM MJPEG IP camera clone)
 
 using System;
 using System.Net;
@@ -26,10 +27,10 @@ namespace Camera.Foscam.MJPEG
     public const int COMMAND_MOTION_UP = 0;
     public const int COMMAND_MOTION_DOWN_STOP = 3;
     public const int COMMAND_MOTION_DOWN = 2;
-    public const int COMMAND_MOTION_LEFT_STOP = 7;
-    public const int COMMAND_MOTION_LEFT = 6;
-    public const int COMMAND_MOTION_RIGHT_STOP = 5;
-    public const int COMMAND_MOTION_RIGHT = 4;
+    public const int COMMAND_MOTION_LEFT_STOP = 5;
+    public const int COMMAND_MOTION_LEFT = 4;
+    public const int COMMAND_MOTION_RIGHT_STOP = 7;
+    public const int COMMAND_MOTION_RIGHT = 6;
     public const int COMMAND_MOTION_UP_LEFT = 90;
     public const int COMMAND_MOTION_UP_RIGHT = 91;
     public const int COMMAND_MOTION_DOWN_LEFT = 92;

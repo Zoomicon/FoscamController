@@ -1,7 +1,9 @@
 ﻿//Project: FoscamController (http://FoscamController.codeplex.com)
 //Filename: MultiPartStream.cs
-//Version: 20151226
+//Version: 20151228
 
+using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -86,12 +88,18 @@ namespace Mime.MultiPart
     {
       return Task.Run(() =>
         {
-          // every part has it's own headers
-          string headerSection = ReadContentHeaderSection(_reader);
-          // let's parse the header section for the content-length
-          int length = GetPartLength(headerSection);
-          // now let's get the image
-          return _reader.ReadBytes(length);
+          try {
+            // every part has it's own headers
+            string headerSection = ReadContentHeaderSection(_reader);
+            // let's parse the header section for the content-length
+            int length = GetPartLength(headerSection);
+            // now let's get the image
+            return _reader.ReadBytes(length);
+          }
+          catch
+          {
+            return null; //this can occur if ReadContentHeaderSection or ReadBytes is running when Close gets called
+          }
         });
     }
 
