@@ -36,7 +36,7 @@ Edit MainWindow.xaml.cs:
 
 * find
     //#define USE_FOSCAM_HD_CAMERA
-uncomment this to use a Foscam HD Camera model instead of an MJPEG model (note that the video won't work in that case, just the motion control for now)
+uncomment this to use a Foscam HD Camera model instead of an MJPEG model
 
 * find
     private const string CAMERA_URL = "http://cameraAddressAndPort";
