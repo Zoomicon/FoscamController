@@ -1,6 +1,6 @@
 FoscamController
 =======================================
-http://FoscamController.codeplex.com
+http://github.com/Zoomicon/FoscamController
 
 
 Description
